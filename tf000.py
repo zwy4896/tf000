@@ -31,7 +31,7 @@ def cnn_model_fn(features, labels, mode):
 
     # dense layer
     pool2_flat = tf.reshape(pool2, [-1, 7*7*64])
-    dense = tf.layers.dense(inputs = pool2_flat, units = 1024, activiation = tf.nn.relu)
+    dense = tf.layers.dense(inputs = pool2_flat, units = 1024, activation = tf.nn.relu)
     dropout = tf.layers.dropout(
         inputs = dense, rate = 0.4, training=mode == tf.estimator.ModeKeys.TRAIN)
 
