@@ -53,6 +53,7 @@ def cnn_model_fn(features, labels, mode):
 
     eval_metric_ops = {"accuracy":tf.metrics.accuracy(labels=labels, predictions=predictions["class"])}
     return tf.estimator.EstimatorSpec(mode=mode, loss=loss, eval_metric_ops=eval_metric_ops)
+    
 if __name__ == "__main__":
     tf.app.run()
     
